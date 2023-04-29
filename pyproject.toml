@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "atppy"
+version = "0.1.0"
+description = "Python library for AT Protocol"
+authors = ["Joseph Farrell"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
