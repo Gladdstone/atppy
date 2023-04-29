@@ -1,6 +1,9 @@
 # attpy - AT Protocol Python Client
 
 ## Installation
+```
+pip install atppy
+```
 
 ## Usage
 
