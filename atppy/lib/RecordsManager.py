@@ -1,11 +1,10 @@
-from requests import Session
-
 from atppy.utils import xrpc
+from atppy.utils.SessionManager import SessionManager
 
 
 class RecordsManager:
 
-  def __init__(self, session: Session):
+  def __init__(self, session: SessionManager):
     self._session = session
     self._client = xrpc(session=session)
 
