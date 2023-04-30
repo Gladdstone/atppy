@@ -2,7 +2,7 @@ from atppy.utils import xrpc
 from atppy.utils.SessionManager import SessionManager
 
 
-class Bsky:
+class Feed:
 
   def __init__(self, session: SessionManager):
     self._session = session
@@ -60,6 +60,36 @@ class Bsky:
       params={
         "limit": limit,
         "cursor": cursor
+      }
+    )
+    return res
+
+  def like(self, subject: str, createdAt: str):
+    res = self._client.post(
+      endpoint="app.bsky.feed.like",
+      params={
+        "subject": subject,
+        "createdAt": createdAt
+      }
+    )
+    return res
+
+  def post(self, text: str, createdAt: str):
+    res = self._client.post(
+      endpoint="app.bsky.feed.post",
+      params={
+        "text": text,
+        "createdAt": createdAt
+      }
+    )
+    return res
+
+  def repost(self, subject: str, createdAt: str):
+    res = self._client.post(
+      endpoint="app.bsky.feed.repost",
+      params={
+        "subject": subject,
+        "createdAt": createdAt
       }
     )
     return res

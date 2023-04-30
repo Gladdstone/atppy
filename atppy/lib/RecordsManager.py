@@ -52,6 +52,16 @@ class RecordsManager:
     )
     return res
 
+  def strong_ref(self, uri: str, cid: str):
+    res = self._client.post(
+      endpoint="com.atproto.repo.strongRef",
+      params={
+        "uri": uri,
+        "cid": cid
+      }
+    )
+    return res
+
   def delete_record(self, repo: str, collection: str, rkey: str):
     res = self._client.post(
       endpoint="com.atproto.repo.deleteRecord",
