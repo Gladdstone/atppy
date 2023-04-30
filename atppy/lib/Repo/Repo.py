@@ -2,7 +2,7 @@ from atppy.utils import xrpc
 from atppy.utils.SessionManager import SessionManager
 
 
-class RecordsManager:
+class Repo:
 
   def __init__(self, session: SessionManager):
     self._session = session
@@ -48,16 +48,6 @@ class RecordsManager:
         "collection": collection,
         "rkey": rkey,
         "record": record
-      }
-    )
-    return res
-
-  def strong_ref(self, uri: str, cid: str):
-    res = self._client.post(
-      endpoint="com.atproto.repo.strongRef",
-      params={
-        "uri": uri,
-        "cid": cid
       }
     )
     return res
