@@ -63,33 +63,3 @@ class Feed:
       }
     )
     return res
-
-  def like(self, subject: str, createdAt: str):
-    res = self._client.post(
-      endpoint="app.bsky.feed.like",
-      params={
-        "subject": subject,
-        "createdAt": createdAt
-      }
-    )
-    return res
-
-  def post(self, text: str, createdAt: str):
-    res = self._client.post(
-      endpoint="app.bsky.feed.post",
-      params={
-        "text": text,
-        "createdAt": createdAt
-      }
-    )
-    return res
-
-  def repost(self, subject: str, createdAt: str):
-    res = self._client.post(
-      endpoint="app.bsky.feed.repost",
-      params={
-        "subject": subject,
-        "createdAt": createdAt
-      }
-    )
-    return res
