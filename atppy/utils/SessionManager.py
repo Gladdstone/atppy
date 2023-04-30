@@ -33,14 +33,17 @@ class SessionManager:
     session = requests.Session()
     session.headers = self._default_session_headers
 
-    res = session.post(
-      url=f"{self._pds}/xrpc/com.atproto.server.createSession",
-      json=self._credentials.credentials()
-    )
-    response = res.json()
+    try:
+      res = session.post(
+        url=f"{self._pds}/xrpc/com.atproto.server.createSession",
+        json=self._credentials.credentials()
+      )
+      response = res.json()
 
-    session.headers.update(
-      {"Authorization": f"Bearer {response.get('accessJwt')}"}
-    )
+      session.headers.update(
+        {"Authorization": f"Bearer {response.get('accessJwt')}"}
+      )
 
-    return session
+      return session
+    except Exception as err:
+      raise err
