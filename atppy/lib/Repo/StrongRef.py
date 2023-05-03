@@ -10,3 +10,9 @@ class StrongRef:
   @property
   def cid(self):
     return self._cid
+
+  def ref(self):
+    return {
+      "uri": self._uri,
+      "cid": self._cid
+    }
