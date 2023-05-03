@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'atppy',
   packages = ['atppy'],
-  version = '0.1.2',
+  version = '0.1.3',
   license='MIT',
   description = 'Python library for AT Protocol',
   author = 'Joseph Farrell',
